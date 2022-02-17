@@ -13,11 +13,10 @@ interface PropsI {
 
 const CreatePostDialog = (props: PropsI) => {
     const [isFullScreen, setFullScreen] = useState(false)
+    const onCloseDialog = () => props.setOpen(false)
     return (
         <Dialog
-            onClose={() => {
-                props.setOpen(false)
-            }}
+            onClose={onCloseDialog}
             open={props.open}
             fullWidth
             PaperProps={{
@@ -44,12 +43,8 @@ const CreatePostDialog = (props: PropsI) => {
                 </Grid>
 
                 <Grid color={'#808080'}>
-                    <CloseIcon style={{marginRight: 16}} cursor={'pointer'} onClick={() => {
-                        props.setOpen(false)
-                    }}/>
-                    <OpenInFullIcon style={{marginRight: 8}} cursor={'pointer'} onClick={() => {
-                        setFullScreen(!isFullScreen)
-                    }}/>
+                    <CloseIcon style={{marginRight: 16}} cursor={'pointer'} onClick={onCloseDialog}/>
+                    <OpenInFullIcon style={{marginRight: 8}} cursor={'pointer'} onClick={() => setFullScreen(!isFullScreen)}/>
                 </Grid>
             </Grid>
 

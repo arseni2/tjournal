@@ -12,6 +12,7 @@ const InitialPage = () => {
     const isCloseDrawer = useMediaQuery(`(max-width:${contentWidth !== 640 ? 1300 : 830}px)`, {noSsr: true})
     const [openDrawer, setOpenDrawer] = useState(!isCloseDrawer)
     const isCloseComment = useMediaQuery(`(max-width:${contentWidth !== 640 ? 1540 : 1180}px)`, {noSsr: true})
+    const openDrawerCondition = openDrawer ? 10 : 12
     return (
         <Grid bgcolor={'#f2f2f2'}>
             <Grid position={'sticky'} top={0}>
@@ -23,7 +24,7 @@ const InitialPage = () => {
                         {isCloseDrawer ? <DrawerMobile open={openDrawer} setOpen={setOpenDrawer}/> : <Drawer/>}
                     </Grid>
                 }
-                <Grid lg={isCloseComment && openDrawer ? 10 : 12} item md={isCloseComment && openDrawer ? 10 : 12}
+                <Grid lg={isCloseComment && openDrawerCondition} item md={isCloseComment && openDrawerCondition}
                       xs={12} display={'flex'} justifyContent={'center'} xl={openDrawer ? 7.9 : 10.3}>
                     <Grid maxWidth={contentWidth} width={'100%'} mt={2} borderRadius={4}>
                         <Outlet context={{setContentWidth}} />

@@ -20,16 +20,14 @@ const TitleNewsTypography = styled(Typography)(() => ({
 
 const News = (props: any) => {
     const [collapse, setCollapse] = useState(false)
+    const onClickCollapse = () => setCollapse(!collapse)
     return (
-        <Paper sx={{maxHeight: 340,padding: 2.5}} elevation={0}>
+        <Paper sx={{maxHeight: 340, padding: 2.5}} elevation={0}>
             <Grid display={'flex'} justifyContent={'space-between'}>
                 <Typography fontWeight={700}>
                     1 февраля, вторник
                 </Typography>
-                <Typography color={'#595959'} fontSize={13} style={{cursor: 'pointer', userSelect: 'none'}}
-                            onClick={() => {
-                                setCollapse(!collapse)
-                            }}>
+                <Typography color={'#595959'} fontSize={13} style={{cursor: 'pointer', userSelect: 'none'}} onClick={onClickCollapse}>
                     свернуть
                 </Typography>
             </Grid>

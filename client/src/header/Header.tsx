@@ -29,7 +29,8 @@ const AvatarContainerGrid = styled(Grid)(() => ({
 const KeyboardArrowDownStyled = styled(KeyboardArrowDownOutlinedIcon)(() => ({
     '&:hover': {
         opacity: 0.8
-    }
+    },
+    cursor: 'pointer'
 }))
 
 interface PropsI {
@@ -79,7 +80,7 @@ const Header = (props: PropsI) => {
                     </NavLinkStyled>
                 </AvatarContainerGrid>
                 <Grid pr={2} pl={2}>
-                    <KeyboardArrowDownStyled cursor={'pointer'} onClick={openPopover}/>
+                    <KeyboardArrowDownStyled onClick={openPopover}/>
                     <UserInfoPopover open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={closePopover}/>
                 </Grid>
             </Grid>

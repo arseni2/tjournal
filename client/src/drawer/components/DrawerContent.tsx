@@ -69,19 +69,7 @@ const DrawerContent = (props: any) => {
                         <DrawerLinks key={i} img_source={item.src} text={item.text}/>
                     </NavLinkStyled>
                 })}
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
-                <DrawerLinks img_source={'item.src'} text={'item.text'}/>
+
                 <Grid display={'flex'} pl={2.4} style={{cursor: 'pointer'}} onClick={addMoreCommunity}>
                     {community.length < 5 ?
                         <><KeyboardArrowDownIcon/>

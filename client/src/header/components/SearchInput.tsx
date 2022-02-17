@@ -28,14 +28,22 @@ const StyledInput = styled(InputBase)(() => ({
         boxSizing: 'border-box'
     },
 }));
+const SearchIconStyled = styled(SearchIcon)(() => ({
+    marginLeft: 5,
+    zIndex: 2,
+    color: '#68645c',
+    position: 'absolute'
+}))
+
 const SearchInput = (props: any) => {
     const [isFocus, setIsFocus] = useState(false)
     const ref = useRef<HTMLDivElement | null>(null)
     useOutsideClick(() => setIsFocus(false), ref, [isFocus])
+    const onFocus = () => setIsFocus(true)
     return <Grid ref={ref} display={'flex'} alignItems={'center'}>
-        <SearchIcon style={{marginLeft: 5, zIndex: 2, color: '#68645c', position: 'absolute'}}/>
+        <SearchIconStyled />
         <Grid display={'flex'} flexDirection={'column'}>
-            <StyledInput placeholder={'Поиск'} onFocus={() => setIsFocus(true)}/>
+            <StyledInput placeholder={'Поиск'} onFocus={onFocus}/>
             <Grid>
                 <SearchInputPaperComplete open={isFocus}/>
             </Grid>

@@ -6,14 +6,14 @@ interface PropsI {
 }
 
 const CreatePostDialogSelectItem = (props: PropsI) => {
+    const {community: {src, title}} = props
     return (
         <Grid display={'flex'}>
             <Grid>
-                <Avatar variant={'rounded'} src={props.community.src} sx={{width: 22, height: 22}}/>
+                <Avatar variant={'rounded'} src={src} sx={{width: 22, height: 22}}/>
             </Grid>
             <Grid pl={1}>
-                <ListItemText primary={props.community.title}/>
-
+                <ListItemText primary={title}/>
                 <Typography color={'#595959'} fontSize={14}>
                     441 973 подписчика
                 </Typography>

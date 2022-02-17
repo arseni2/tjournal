@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {MenuItem, Select, Typography, ListSubheader, Grid, Avatar} from "@mui/material";
+import {MenuItem, Select, Typography, ListSubheader, Grid, Avatar, SelectChangeEvent} from "@mui/material";
 import CreatePostDialogSelectItem from "./CreatePostDialogSelectItem";
 import {styled} from "@mui/system";
 
@@ -39,12 +39,12 @@ const SelectStyled = styled(Select)(() => ({
 
 const CreatePostDialogSelect = (props: any) => {
     const [selected, setSelected] = useState<string>('My blog')
+    const onChangeSelect = (e: SelectChangeEvent<unknown>) => setSelected(e.target.value as string)
+    const renderValue = (value: unknown) => <Typography>{value as string}</Typography>
     return (
         <SelectStyled
-            onChange={(e) => {
-                setSelected(e.target.value as string)
-            }}
-            renderValue={(value) => <Typography>{value as string}</Typography>}
+            onChange={onChangeSelect}
+            renderValue={renderValue}
             value={selected}
             variant={'standard'}
         >
